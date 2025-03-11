@@ -17,18 +17,17 @@ Test different frameworks and tools all together
 TODO APP in all test cases
 1.	Create basic Logic/Content for the app (html – css – js)
 2.	React creation
-    * with CRA
-    * with Vite
-    * router DOM
-    * Self build with tools (source maps)
-    * NO React but at the end
-    * !All linting and optimizing tools
-3.	With or without Typescript
+    * with VITE - [x] 
+    * React Router (v7) (just play with it) - [x]
+    * Redux (just to play with it)? - already done it
+    * Vanilla?
+        * use custom webpack and babel
+3. Tooling
+    * Prettier + Eslint - [x]
 4.	With tests
     * Jest
     * Cypress
-    * React testing library
-    * Others
+    * React testing library 
 5.	With popular npm modules
     * Moment.js (date-fsn,day.js)
     * Lodash
@@ -38,7 +37,7 @@ TODO APP in all test cases
     * React hook form
 6.	Accessibility
 7.	CSS Preprocessors
-    * Sass/SCSS
+    * Sass/SCSS  
     * Less
     * Others
 8.	CSS
@@ -46,13 +45,16 @@ TODO APP in all test cases
     * Media queries
     * Grid
     * Flex
-    * Use tailwing in some small cases
-    * Different organisations of css code (BEM, SMACS)
+    * Use tailwing
+    * Methodolies:
+        * BEM 
+        * SMACSS
 9.	Fake user session with JWT
 10.	Use GitHub 
     * conventional commits 
+        * use rebase, interactive rebase, combine commits ect
     * Semantic versioning
-    * Change log
+    * Change log?
     * Pipelines?
 11.	Build
     * Husky for lint test and build ( both js and css)
