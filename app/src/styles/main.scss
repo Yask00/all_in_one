@@ -1,0 +1,9 @@
+@use 'variables.scss' as *;
+@use 'typography.scss' as *;
+@use 'fonts.scss' as *;
+
+body {
+    margin: 0;
+    padding: 0;
+    // font-family: 'Oswald', 'Roboto', sans-serif;
+}
