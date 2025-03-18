@@ -1,15 +1,1 @@
 @use 'variables.scss' as *;
-
-.header {
-    color: $primary-color;
-    text-align: center;
-    font-size: 2rem;
-    font-family: 'Oswald',
-}
-
-.text {
-    color: $secondary-color;
-    font-size: 1rem;
-    line-height: 1.6;
-    font-family: 'Roboto';
-}

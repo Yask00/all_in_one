@@ -1,16 +1,18 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import Layout from "./components/Layout/Layout";
 import "./App.css";
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
+import Aside from "./components/Aside/Aside";
+import Main from "./components/Main/Main";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div className="header">header</div>
-      <div className="text">test</div>
-    </>
+    <Layout>
+      <Navigation></Navigation>
+      <Aside></Aside>
+      <Main></Main>
+      <Footer></Footer>
+    </Layout>
   );
 }
 

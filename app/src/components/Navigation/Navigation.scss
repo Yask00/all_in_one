@@ -1,0 +1,29 @@
+.nav {
+    background-color: rgb(30, 124, 124);
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 0 1.25rem 0 0;
+    color: white;
+}
+
+.nav__logo {
+    //
+}
+
+.nav__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+        list-style: none;
+        margin-right: 0.625rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
