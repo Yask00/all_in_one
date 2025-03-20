@@ -14,7 +14,7 @@ export interface TodoList {
   limit: number;
 }
 
-export interface User {
+export type User = {
   id: string;
   email: string;
-}
+} | null;
