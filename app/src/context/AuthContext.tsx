@@ -42,10 +42,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     setToken_(newToken);
   };
 
-  const setUser = (user: User) => {
-    if (!user) {
-      return;
-    }
+  const setUser = (user: User | undefined) => {
     setUser_(user);
   };
 

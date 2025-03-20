@@ -1,8 +1,20 @@
-import { ReactElement, useRef, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import "./Login.scss";
 import useCookie from "../../hooks/useCookie";
+import { useNavigate } from "react-router";
+import { useAuth } from "../../context/AuthContext";
 
 const Login = (): ReactElement => {
+  const navigate = useNavigate();
+  const { setToken, setUser } = useAuth();
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/todos");
+    }
+  }, [user, navigate]);
+
   const [isRememberingMe, setIsRememberingMe] = useState<boolean>(false);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -52,14 +64,18 @@ const Login = (): ReactElement => {
       .then((data) => {
         updateCookie(data.accessToken, {});
         updateUserCookie(JSON.stringify(data.user));
-        window.location.href = "/"; // TODO: Router Navigate
+        setToken(data.accessToken);
+        setUser(data.user);
+      })
+      .then(() => {
+        navigate("/todos");
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  return (
+  return !user ? (
     <div id="id01" className="modal">
       <form className="modal-content">
         <div className="imgcontainer">
@@ -124,6 +140,8 @@ const Login = (): ReactElement => {
         </div>
       </form>
     </div>
+  ) : (
+    <></>
   );
 };
 
