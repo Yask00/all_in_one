@@ -13,3 +13,8 @@ export interface TodoList {
   skip: number;
   limit: number;
 }
+
+export interface User {
+  id: string;
+  email: string;
+}
