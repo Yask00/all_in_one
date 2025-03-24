@@ -141,6 +141,7 @@
         "userId": 26
     }
     ```
+
 * Delete TODO
     ```js
     fetch('https://dummyjson.com/todos/1', {

@@ -8,6 +8,9 @@ import Login from "./features/Login/Login";
 import AuthProvider from "./context/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import Todos from "./features/Todos/Todos/Todos";
+import Todo from "./features/Todos/Todo/Todo";
+import AddTodo from "./features/Todos/AddTodo/AddTodo";
 
 function App() {
   return (
@@ -25,7 +28,7 @@ function App() {
                   index
                   element={
                     <ProtectedRoute>
-                      <div>TODO LIST</div>
+                      <Todos />
                     </ProtectedRoute>
                   }
                 />
@@ -33,7 +36,7 @@ function App() {
                   path=":id"
                   element={
                     <ProtectedRoute>
-                      <div>TODO BY ID</div>
+                      <Todo />
                     </ProtectedRoute>
                   }
                 />
@@ -41,7 +44,7 @@ function App() {
                   path="add"
                   element={
                     <ProtectedRoute>
-                      <div>TODO ADD</div>
+                      <AddTodo />
                     </ProtectedRoute>
                   }
                 />

@@ -50,6 +50,11 @@ const Navigation = (): ReactElement => {
                 Todos
               </NavLink>
             </li>
+            <li className="nav__menu__item">
+              <NavLink to="/todos/add" end>
+                Add Todo
+              </NavLink>
+            </li>
             <li onClick={logoutHandler} className="nav__menu__item">
               Logout
             </li>
