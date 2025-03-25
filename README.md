@@ -3,7 +3,7 @@ Test different frameworks and tools all together
 
 # Features to implement
 * TODO section [FREE API](https://dummyjson.com/docs/todos)
-    * List ALL with pagination or infinite
+    * <del>List ALL with pagination or infinite
     * <del>ADD new
     * <del>Click and goto single TODO
     * <del>Delete TODO

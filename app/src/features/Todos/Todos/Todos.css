@@ -10,3 +10,21 @@
         items-stretch
         gap-2;
 }
+
+.todos__list_add-btn {
+    @apply 
+        box-content
+        flex    
+        w-40
+        flex-row 
+        justify-center 
+        items-center 
+        gap-2 
+        p-2 
+        bg-blue-500 
+        text-white 
+        rounded-md 
+        cursor-pointer
+        my-8
+        mx-auto;
+}
