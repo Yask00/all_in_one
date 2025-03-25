@@ -68,3 +68,19 @@ export const deleteTodo = async (todoId: string) => {
 
   return response.json();
 };
+
+export const fetchInfiniteTodos = async ({
+  limit = 10,
+  skip,
+}: {
+  limit: number;
+  skip: number;
+}) => {
+  const response = await fetch(baseUrl + `todos?limit=${limit}&skip=${skip}`);
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+
+  const todos = await response.json();
+  return todos;
+};
