@@ -29,6 +29,7 @@ TODO APP in all test cases
     * React testing library 
 4. With state management
     * redux toolkit + others
+        - todos
     * context API
         - <del>user and token
         - theme

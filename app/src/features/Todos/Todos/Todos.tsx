@@ -5,6 +5,7 @@ import { fetchInfiniteTodos } from "../../../api/api";
 import { Todo as TodoInt } from "../../../types/interfaces";
 import Todo from "../Todo/Todo";
 import React from "react";
+import Spinner from "../../../components/Spinner/Spinner";
 
 const Todos = (): ReactElement => {
   // const { isPending, error, data } = useQuery({
@@ -14,6 +15,7 @@ const Todos = (): ReactElement => {
   //   retryOnMount: false,
   // });
 
+  // const [loading, setLoading] = useState<boolean>(true);
   const limitPerLoad: number = 30;
 
   const {
@@ -58,7 +60,7 @@ const Todos = (): ReactElement => {
   // );
 
   return status === "pending" ? (
-    <p>Loading...</p>
+    <Spinner />
   ) : status === "error" ? (
     <p>Error: {error.message}</p>
   ) : (
