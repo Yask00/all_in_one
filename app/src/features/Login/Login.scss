@@ -35,7 +35,8 @@ button:hover {
 
 /* Center the image and position the close button */
 .imgcontainer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 24px 0 12px 0;
   position: relative;
 
@@ -55,7 +56,7 @@ span.psw {
 
 /* The Modal (background) */
 .modal {
-  // position: fixed;
+  position: relative;
   /* Stay in place */
   z-index: 1;
   /* Sit on top */

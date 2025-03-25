@@ -3,11 +3,13 @@ import "./Login.scss";
 import useCookie from "../../hooks/useCookie";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../context/AuthContext";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Login = (): ReactElement => {
   const navigate = useNavigate();
   const { setToken, setUser } = useAuth();
   const { user } = useAuth();
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (user) {
@@ -18,6 +20,7 @@ const Login = (): ReactElement => {
   const [isRememberingMe, setIsRememberingMe] = useState<boolean>(false);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [cookie, getCookie, updateCookie, deleteCookie] = useCookie("jwt") as [
     string,
@@ -45,6 +48,7 @@ const Login = (): ReactElement => {
 
   const submitHandler = (e: React.FormEvent<HTMLButtonElement>): void => {
     e.preventDefault();
+    setLoading(true);
 
     fetch("http://localhost:3000/signin", {
       method: "POST",
@@ -72,6 +76,9 @@ const Login = (): ReactElement => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -139,6 +146,7 @@ const Login = (): ReactElement => {
           </span>
         </div>
       </form>
+      {loading && <Spinner />}
     </div>
   ) : (
     <></>
