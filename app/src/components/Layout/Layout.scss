@@ -6,6 +6,7 @@
         "menu main main main main main"
         "footer footer footer footer footer footer";
     grid-template-rows: 50px 1fr 200px;
+    grid-template-columns: 1fr 4fr;
 
     @media screen and (max-width: 768px) {
         grid-template-areas:
@@ -14,5 +15,6 @@
             "menu"
             "footer";
         grid-template-rows: 50px 1fr 50px 50px;
+        grid-template-columns: 1fr;
     }
 }

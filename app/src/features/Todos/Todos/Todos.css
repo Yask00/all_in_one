@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-.todos {
-    @apply flex flex-col justify-center items-center py-4;
-}
-
-/* TODO: Connection with layout */
 .todos__list { 
     @apply 
         box-content
@@ -15,5 +10,3 @@
         items-stretch
         gap-2;
 }
-
-

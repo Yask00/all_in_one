@@ -21,14 +21,16 @@ const Todos = (): ReactElement => {
   }
 
   return (
-    <div className="todos">
-      <h1 className="text-3xl font-bold underline text-center mb-4">Todos:</h1>
-      <ul className="todos__list">
+    <>
+      <h1 className="text-3xl font-bold underline text-center mb-4 pt-3">
+        Todos:
+      </h1>
+      <div className="todos__list mb-6">
         {data.todos.map((todo: TodoInt) => (
           <Todo todo={todo} key={todo.id} />
         ))}
-      </ul>
-    </div>
+      </div>
+    </>
   );
 };
 
