@@ -21,7 +21,14 @@ function App() {
           <Aside></Aside>
           <Main>
             <Routes>
-              <Route path="/" element={<div>HOME PAGE</div>} />
+              <Route
+                path="/"
+                element={
+                  <div className="flex items-center justify-center w-full h-full">
+                    HOME PAGE
+                  </div>
+                }
+              />
               <Route path="/login" element={<Login />} />
               <Route path="/todos">
                 <Route
