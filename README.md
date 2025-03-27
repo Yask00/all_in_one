@@ -9,7 +9,7 @@ Test different frameworks and tools all together
     * <del>Delete TODO
 * <del>Login and user implementation
 * Advanced Contact form
-* Multi language support 
+* <del>Multi language support 
 
 # Technologies in the different projects
 TODO APP in all test cases
@@ -33,7 +33,7 @@ TODO APP in all test cases
     * context API
         - <del>user and token
         - theme
-        - language
+        - <del>language
     * other??
 5.	With popular npm modules
     * <del>React-query
@@ -41,7 +41,7 @@ TODO APP in all test cases
     * Lodash
     * Immer
     * Immutable
-    * 18next, react-i18next, and next-i18next
+    * <del>18next, react-i18next, and next-i18next
     * React hook form ( for the login form or add todo)
 6.	Accessibility
 7.	CSS Preprocessors

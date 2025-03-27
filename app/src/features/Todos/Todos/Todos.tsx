@@ -6,8 +6,12 @@ import { Todo as TodoInt } from "../../../types/interfaces";
 import Todo from "../Todo/Todo";
 import React from "react";
 import Spinner from "../../../components/Spinner/Spinner";
+import { useTranslation, Trans } from "react-i18next";
 
 const Todos = (): ReactElement => {
+  const { t } = useTranslation();
+  const limitPerLoad: number = 30;
+
   // const { isPending, error, data } = useQuery({
   //   queryKey: ["todos"],
   //   queryFn: fetchTodos,
@@ -16,7 +20,6 @@ const Todos = (): ReactElement => {
   // });
 
   // const [loading, setLoading] = useState<boolean>(true);
-  const limitPerLoad: number = 30;
 
   const {
     data,
@@ -66,7 +69,8 @@ const Todos = (): ReactElement => {
   ) : (
     <>
       <h1 className="text-3xl font-bold underline text-center mb-4 pt-3">
-        Todos:
+        <Trans i18nKey={"todos.header"}></Trans>&nbsp;
+        {t("todos.headerText")}:
       </h1>
       <div className="todos__list mb-6">
         {data.pages.map((group, i) => (
