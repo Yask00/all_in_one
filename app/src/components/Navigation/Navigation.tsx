@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import { NavLink, useNavigate } from "react-router";
 import useCookie from "../../hooks/useCookie";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../../context/ThemeContext";
 
 const lngs = {
   en: "en", // { nativeName: "English" },
@@ -16,6 +17,9 @@ const Navigation = (): ReactElement => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState(lngs.en);
+  const themeContext = useTheme();
+  const toggleTheme = themeContext?.toggleTheme;
+  const darkMode = themeContext?.darkMode;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [cookie, getCookie, updateCookie, deleteCookie] = useCookie("jwt") as [
@@ -46,6 +50,12 @@ const Navigation = (): ReactElement => {
     const nextlanguage = language === lngs.bg ? lngs.en : lngs.bg;
     setLanguage(nextlanguage);
     i18n.changeLanguage(nextlanguage);
+  };
+
+  const toggleThemhandler = () => {
+    if (toggleTheme) {
+      toggleTheme();
+    }
   };
 
   return (
@@ -80,9 +90,23 @@ const Navigation = (): ReactElement => {
             </NavLink>
           </li>
         )}
-        <li className="nav__menu__item" onClick={changeLanguage}>
+        <li
+          className="nav__menu__item nav__menu__item__lang"
+          onClick={changeLanguage}
+        >
           {language.toUpperCase()}
         </li>
+        <div className="switch-wrapper">
+          <label className="switch" htmlFor="checkbox">
+            <input
+              onChange={toggleThemhandler}
+              checked={darkMode}
+              type="checkbox"
+              id="checkbox"
+            />
+            <div className="slider round"></div>
+          </label>
+        </div>
       </ul>
     </nav>
   );

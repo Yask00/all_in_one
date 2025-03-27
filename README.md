@@ -32,7 +32,7 @@ TODO APP in all test cases
         - todos
     * context API
         - <del>user and token
-        - theme
+        - <del>theme
         - <del>language
     * other??
 5.	With popular npm modules
@@ -41,6 +41,7 @@ TODO APP in all test cases
     * Lodash
     * Immer
     * Immutable
+    * notifications
     * <del>18next, react-i18next, and next-i18next
     * React hook form ( for the login form or add todo)
 6.	Accessibility
