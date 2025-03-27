@@ -4,6 +4,7 @@ import useCookie from "../../hooks/useCookie";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../context/AuthContext";
 import Spinner from "../../components/Spinner/Spinner";
+import { toast } from "react-toastify";
 
 const Login = (): ReactElement => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const Login = (): ReactElement => {
     })
       .then((res) => {
         if (!res.ok) {
-          // TODO: handle with notification or form validation
+          toast.error("Unsuccesful login");
           throw new Error("Invalid credentials");
         }
         return res.json();
