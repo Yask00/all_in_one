@@ -6,6 +6,7 @@ import { NavLink, useNavigate, useParams } from "react-router";
 import { Todo as TodoInt } from "../../../types/interfaces";
 import Spinner from "../../../components/Spinner/Spinner";
 import React from "react";
+import { toast } from "react-toastify";
 
 interface Props {
   todo?: TodoInt;
@@ -33,7 +34,7 @@ const Todo = ({ todo }: Props): ReactElement => {
     },
     onSuccess: () => {
       setIsDeleting(false);
-      alert("Todo deleted!");
+      toast.success("Todo deleted");
       handleRedirect();
     },
   });

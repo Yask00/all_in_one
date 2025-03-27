@@ -35,13 +35,14 @@ TODO APP in all test cases
         - <del>theme
         - <del>language
     * other??
+4.  Websockets
 5.	With popular npm modules
     * <del>React-query
     * Moment.js (date-fsn,day.js)
     * Lodash
     * Immer
     * Immutable
-    * notifications
+    * <del>notifications
     * <del>18next, react-i18next, and next-i18next
     * React hook form ( for the login form or add todo)
 6.	Accessibility
@@ -53,7 +54,7 @@ TODO APP in all test cases
     * <del>Reset ect
     * <del>Media queries
     * <del>Grid for main layout
-    * Flex
+    * <del>Flex
     * <del>Use tailwing
     * Methodolies:
         * <del>BEM

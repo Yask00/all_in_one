@@ -4,6 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { createTodo } from "../../../api/api";
 import React from "react";
 import Spinner from "../../../components/Spinner/Spinner";
+import { toast } from "react-toastify";
 
 const AddTodo = (): ReactElement => {
   const completedRef = React.useRef<HTMLInputElement>(null);
@@ -18,7 +19,7 @@ const AddTodo = (): ReactElement => {
     onSuccess: () => {
       todoRef.current!.value = "";
       completedRef.current!.checked = false;
-      alert("Todo added!");
+      toast.success("Todo added");
     },
   });
 
