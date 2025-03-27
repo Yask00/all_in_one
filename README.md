@@ -22,7 +22,7 @@ TODO APP in all test cases
         * use custom webpack and babel
 3.  <del>Tooling
     * Prettier + Eslint - [x]
-3.  <del>* Routing
+3.  <del> Routing
 4.	With tests
     * Jest
     * Cypress
@@ -38,7 +38,7 @@ TODO APP in all test cases
 4.  Websockets
 5.	With popular npm modules
     * <del>React-query
-    * Moment.js (date-fsn,day.js)
+    * <del>Moment.js (date-fsn,day.js) -> Intl _ Clock comp
     * Lodash
     * Immer
     * Immutable
