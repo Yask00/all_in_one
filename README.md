@@ -8,7 +8,7 @@ Test different frameworks and tools all together
     * <del>Click and goto single TODO
     * <del>Delete TODO
 * <del>Login and user implementation
-* Advanced Contact form
+* <del>Advanced Contact form
 * <del>Multi language support 
 
 # Technologies in the different projects
@@ -39,12 +39,12 @@ TODO APP in all test cases
 5.	With popular npm modules
     * <del>React-query
     * <del>Moment.js (date-fsn,day.js) -> Intl _ Clock comp
-    * Lodash
-    * Immer
-    * Immutable
+    * <del>Lodash skip
+    * <del>Immer skip (have it in redux)
+    * <del>Immutable - skip
     * <del>notifications
     * <del>18next, react-i18next, and next-i18next
-    * React hook form ( for the login form or add todo)
+    * <del>React hook form ( for the login form or add todo)
 6.	Accessibility
 7.	CSS Preprocessors
     * <del>Sass/SCSS  

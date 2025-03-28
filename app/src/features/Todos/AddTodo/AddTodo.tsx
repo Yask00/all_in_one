@@ -2,29 +2,58 @@ import { ReactElement } from "react";
 import "./AddTodo.scss";
 import { useMutation } from "@tanstack/react-query";
 import { createTodo } from "../../../api/api";
-import React from "react";
 import Spinner from "../../../components/Spinner/Spinner";
 import { toast } from "react-toastify";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { Todo } from "../../../types/interfaces";
+
+type Inputs = {
+  todo: string;
+  completed: boolean;
+};
 
 const AddTodo = (): ReactElement => {
-  const completedRef = React.useRef<HTMLInputElement>(null);
-  const todoRef = React.useRef<HTMLInputElement>(null);
+  // const completedRef = React.useRef<HTMLInputElement>(null);
+  // const todoRef = React.useRef<HTMLInputElement>(null);
 
-  const mutation = useMutation<
-    { completed: boolean; todo: string; userId: number },
-    Error,
-    { completed: boolean; todo: string; userId: number }
-  >({
+  const mutation = useMutation<Todo, Error, Todo>({
     mutationFn: (newTodo) => createTodo(newTodo),
     onSuccess: () => {
-      todoRef.current!.value = "";
-      completedRef.current!.checked = false;
+      // todoRef.current!.value = "";
+      // completedRef.current!.checked = false;
+      resetField("todo");
+      resetField("completed");
       toast.success("Todo added");
     },
   });
 
-  // TODO: use react-hook-form to create a form to add a todo and make it more beautiful
-  // Validation: todo is required
+  const {
+    register,
+    resetField,
+    handleSubmit,
+    // watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const submitOptions = {
+    todo: {
+      required: "Todo is required",
+      minLength: {
+        value: 4,
+        message: "Todo must have at least 4 chars length",
+      },
+    },
+  };
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    mutation.mutate({
+      todo: data.todo,
+      completed: data.completed,
+      userId: 1,
+    });
+  };
+  // console.log(watch("todo")); // watch input value by passing the name of it
+
   return (
     <div className="add-todo">
       <>
@@ -36,32 +65,35 @@ const AddTodo = (): ReactElement => {
 
         {mutation.isPending ? <Spinner /> : null}
 
-        <form className="form-inline">
+        {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
+        <form className="form-inline" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="todo">Todo:</label>
           <input
-            ref={todoRef}
+            /* register your input into the hook by invoking the "register" function */
+            {...register(
+              "todo",
+              submitOptions.todo /*{ required: true, min: 4 } */
+            )}
+            defaultValue={""}
+            // ref={todoRef} with ref is always empty in hook form
             type="text"
             id="todo"
             placeholder="Enter todo"
             name="todo"
           />
+          {/* errors will return when field validation fails  */}
+          {errors.todo && <span>* This field is required</span>}
+
           <label>
-            <input ref={completedRef} type="checkbox" name="completed" />{" "}
+            <input
+              {...register("completed")}
+              // ref={completedRef}
+              type="checkbox"
+              name="completed"
+            />{" "}
             Completed?
           </label>
-          <button
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              mutation.mutate({
-                completed: completedRef.current?.checked || false,
-                todo: todoRef.current?.value || "",
-                userId: 1,
-              });
-            }}
-          >
-            Create Todo
-          </button>
+          <button type="submit">Create Todo</button>
         </form>
       </>
     </div>
