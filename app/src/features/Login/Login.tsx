@@ -89,41 +89,43 @@ const Login = (): ReactElement => {
         <div className="imgcontainer">
           <img
             src="https://placehold.co/50x50"
-            alt="Avatar"
+            alt="User Avatar"
             className="avatar"
           />
         </div>
 
         <div className="container">
-          <label htmlFor="uname">
-            <b>Username</b>
-          </label>
-          <input
-            ref={emailRef}
-            // value={username}
-            // onChange={(e) => setusername(e.target.value)}
-            type="text"
-            placeholder="Enter Username"
-            id="uname"
-            required
-          />
+          <fieldset>
+            <label htmlFor="uname">
+              <b>Username</b>
+            </label>
+            <input
+              ref={emailRef}
+              // value={username}
+              // onChange={(e) => setusername(e.target.value)}
+              type="text"
+              placeholder="Enter Username"
+              id="uname"
+              required
+            />
 
-          <label htmlFor="psw">
-            <b>Password</b>
-          </label>
-          <input
-            type="password"
-            ref={passwordRef}
-            // value={password}
-            // onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter Password"
-            id="psw"
-            required
-          />
-
+            <label htmlFor="psw">
+              <b>Password</b>
+            </label>
+            <input
+              type="password"
+              ref={passwordRef}
+              // value={password}
+              // onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Password"
+              id="psw"
+              required
+            />
+          </fieldset>
           <button className="modal-btn" type="submit" onClick={submitHandler}>
             Login
           </button>
+
           <label>
             <input
               type="checkbox"
@@ -140,7 +142,7 @@ const Login = (): ReactElement => {
           style={{ backgroundColor: styles.backgroundColor }}
         >
           <button
-            type="button "
+            type="button"
             onClick={() => {}}
             className="modal-btn cancelbtn"
           >

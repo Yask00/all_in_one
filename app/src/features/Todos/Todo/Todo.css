@@ -37,19 +37,18 @@
         absolute 
         top-0
         -right-5 
-        bg-amber-800 
         text-white
         rotate-45
 }
 
 .todos__list__item--active {
     @apply 
-    bg-red-700;
+    bg-red-800;
 }
 
 .todos__list__item--completed {
     @apply 
-    bg-green-600;
+    bg-green-800;
 }
 
 .todo__item__wrapper {

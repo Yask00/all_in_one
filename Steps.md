@@ -5,7 +5,7 @@
     <del>import & variables 
     <del>mobile first
     <del> reset - fights with tailwind
-3. add accesibility
+3. <del>add accesibility
 4. websockets if?
 5. redux
 6. tests

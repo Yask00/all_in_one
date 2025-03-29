@@ -60,7 +60,11 @@ const Navigation = (): ReactElement => {
 
   return (
     <nav className="nav">
-      <img src="https://placehold.co/70x50" alt="" className="nav__logo" />
+      <img
+        src="https://placehold.co/70x50"
+        alt="Project logo"
+        className="nav__logo"
+      />
       <ul className="nav__menu">
         {user ? (
           <>
@@ -79,7 +83,7 @@ const Navigation = (): ReactElement => {
                 {t("navigation.addTodo")}
               </NavLink>
             </li>
-            <li onClick={logoutHandler} className="nav__item">
+            <li onClick={logoutHandler} tabIndex={0} className="nav__item">
               {t("navigation.logout")}
             </li>
           </>
@@ -90,10 +94,14 @@ const Navigation = (): ReactElement => {
             </NavLink>
           </li>
         )}
-        <li className="nav__item nav__lang" onClick={changeLanguage}>
+        <li
+          className="nav__item nav__lang"
+          tabIndex={0}
+          onClick={changeLanguage}
+        >
           {language === lngs.bg ? lngs.en.toUpperCase() : lngs.bg.toUpperCase()}
         </li>
-        <li className="nav__item">
+        <li className="nav__item" tabIndex={0}>
           <div className="switch-wrapper">
             <label className="switch" htmlFor="checkbox">
               <input

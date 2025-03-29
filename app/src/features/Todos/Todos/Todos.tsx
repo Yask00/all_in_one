@@ -72,7 +72,7 @@ const Todos = (): ReactElement => {
         <Trans i18nKey={"todos.header"}></Trans>&nbsp;
         {t("todos.headerText")}:
       </h1>
-      <div className="todos__list mb-6">
+      <ul className="todos__list mb-6">
         {data.pages.map((group, i) => (
           <React.Fragment key={i}>
             {group.todos.map((todo: TodoInt) => {
@@ -80,7 +80,7 @@ const Todos = (): ReactElement => {
             })}
           </React.Fragment>
         ))}
-      </div>
+      </ul>
 
       <button
         className="todos__list_add-btn"
