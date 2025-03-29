@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .layout {
     min-height: 100vh;
     display: grid;
@@ -8,7 +10,7 @@
     grid-template-rows: 50px 1fr 200px;
     grid-template-columns: 1fr 4fr;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $desktop-width) {
         grid-template-areas:
             "header"
             "main"

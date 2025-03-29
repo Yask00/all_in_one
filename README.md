@@ -46,19 +46,19 @@ TODO APP in all test cases
     * <del>18next, react-i18next, and next-i18next
     * <del>React hook form ( for the login form or add todo)
 6.	Accessibility
-7.	CSS Preprocessors
+7.	<del>CSS Preprocessors
     * <del>Sass/SCSS  
-    * Less
-    * Others
-8.	CSS
+    * <del>Atomic
+    * <del>Others
+8.	<del>CSS
     * <del>Reset ect
     * <del>Media queries
     * <del>Grid for main layout
     * <del>Flex
     * <del>Use tailwing
-    * Methodolies:
+    * <del>Methodolies:
         * <del>BEM
-        * SMACSS
+        * <delSMACSS
 9.	<del>Fake user session with JWT and server
 9.  Go through different notes, docs and stuff to try and use little of everything and optimize
     * mostly Typescript...

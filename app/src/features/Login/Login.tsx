@@ -121,7 +121,7 @@ const Login = (): ReactElement => {
             required
           />
 
-          <button type="submit" onClick={submitHandler}>
+          <button className="modal-btn" type="submit" onClick={submitHandler}>
             Login
           </button>
           <label>
@@ -139,7 +139,11 @@ const Login = (): ReactElement => {
           className="container"
           style={{ backgroundColor: styles.backgroundColor }}
         >
-          <button type="button" onClick={() => {}} className="cancelbtn">
+          <button
+            type="button "
+            onClick={() => {}}
+            className="modal-btn cancelbtn"
+          >
             Cancel
           </button>
           <span className="psw">
