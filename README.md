@@ -45,7 +45,7 @@ TODO APP in all test cases
     * <del>notifications
     * <del>18next, react-i18next, and next-i18next
     * <del>React hook form ( for the login form or add todo)
-6.	Accessibility
+6.	<del>Accessibility
 7.	<del>CSS Preprocessors
     * <del>Sass/SCSS  
     * <del>Atomic

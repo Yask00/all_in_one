@@ -14,8 +14,29 @@
 }
 
 // D(1) is the first child division inside the container
+.D\(1\)\:h {
+    background-color: #005200;
+    color: #f7c6c6;
+}
+
 .D\(1\)\:h:hover {
-    background-color: green;
+    background-color: #005200;
     color: white;
     cursor: pointer;
+}
+
+.aside-text {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #fff;
+    text-align: justify;
+    max-width: 65ch;
+
+    // These lines will display the value of the href attribute next to every link that has a href attribute, which starts with http, but doesn't have mywebsite.com in its value.
+    @media print {
+        a[href^="http"]:not([href*="mywebsite.com"])::after {
+            content: " (" attr(href) ")";
+        }
+    }
 }
