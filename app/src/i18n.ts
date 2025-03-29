@@ -5,7 +5,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 i18n
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  .use(LanguageDetector)
+  // .use(LanguageDetector)
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
   // init i18next
@@ -43,7 +43,7 @@ i18n
           navigation: {
             home: "Начало",
             todos: "Задачи",
-            addTodo: "Добави задача",
+            addTodo: "Добави",
             login: "Вход",
             logout: "Изход",
           },

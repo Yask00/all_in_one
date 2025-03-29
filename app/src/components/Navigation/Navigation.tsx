@@ -60,53 +60,52 @@ const Navigation = (): ReactElement => {
 
   return (
     <nav className="nav">
-      <img src="https://placehold.co/70x50" alt="" className="logo" />
+      <img src="https://placehold.co/70x50" alt="" className="nav__logo" />
       <ul className="nav__menu">
         {user ? (
           <>
-            <li className="nav__menu__item">
+            <li className="nav__item">
               <NavLink to="/" end>
                 {t("navigation.home")}
               </NavLink>
             </li>
-            <li className="nav__menu__item">
+            <li className="nav__item">
               <NavLink to="/todos" end>
                 {t("navigation.todos")}
               </NavLink>
             </li>
-            <li className="nav__menu__item">
+            <li className="nav__item">
               <NavLink to="/todos/add" end>
                 {t("navigation.addTodo")}
               </NavLink>
             </li>
-            <li onClick={logoutHandler} className="nav__menu__item">
+            <li onClick={logoutHandler} className="nav__item">
               {t("navigation.logout")}
             </li>
           </>
         ) : (
-          <li className="nav__menu__item">
+          <li className="nav__item">
             <NavLink to="/login" end>
               {t("navigation.login")}
             </NavLink>
           </li>
         )}
-        <li
-          className="nav__menu__item nav__menu__item__lang"
-          onClick={changeLanguage}
-        >
-          {language.toUpperCase()}
+        <li className="nav__item nav__lang" onClick={changeLanguage}>
+          {language === lngs.bg ? lngs.en.toUpperCase() : lngs.bg.toUpperCase()}
         </li>
-        <div className="switch-wrapper">
-          <label className="switch" htmlFor="checkbox">
-            <input
-              onChange={toggleThemhandler}
-              checked={darkMode}
-              type="checkbox"
-              id="checkbox"
-            />
-            <div className="slider round"></div>
-          </label>
-        </div>
+        <li className="nav__item">
+          <div className="switch-wrapper">
+            <label className="switch" htmlFor="checkbox">
+              <input
+                onChange={toggleThemhandler}
+                checked={darkMode}
+                type="checkbox"
+                id="checkbox"
+              />
+              <div className="slider round"></div>
+            </label>
+          </div>
+        </li>
       </ul>
     </nav>
   );

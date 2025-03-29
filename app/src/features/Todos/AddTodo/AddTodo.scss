@@ -1,15 +1,26 @@
+@use '../../..//styles/variables' as *;
+
 .add-todo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 50px;
     border: 2px solid #ddd;
     border-radius: 5px;
-    width: 400px;
-    height: 400px;
-    margin: 50px auto;
     box-shadow: #ddd 0px 0px 10px;
+    width: 100%;
+    height: 400px;
 
+    @media screen and (min-width: $desktop-width) {
+        width: 50%;;
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0 20px;
+    }
+
+    // copied form from w3s
     .form-inline {
         display: flex;
         flex-direction: column;
@@ -28,14 +39,6 @@
         border: 1px solid #ddd;
     }
 
-    .form-inline button {
-        padding: 10px 20px;
-        background-color: dodgerblue;
-        border: 1px solid #ddd;
-        color: white;
-        cursor: pointer;
-    }
-
     .form-inline button:hover {
         background-color: royalblue;
     }
@@ -51,8 +54,21 @@
         }
     }
 
-    button {
+    .btn {
         margin: 50px auto 0;
         border-radius: 5px;
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        max-width: 200px;
+
+        &--submit {
+            background-color: dodgerblue;
+            color: white;
+        }
+    }
+
+    .error {
+        color: rgb(182, 9, 9);
     }
 }

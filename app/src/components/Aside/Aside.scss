@@ -3,3 +3,19 @@
     grid-area: menu;
     padding: 1.25rem;
 }
+
+// Using Atomic css
+.Bgc\(\#00FF00\) {
+    background-color: #000;
+}
+
+.C\(\#FFFFFF\) {
+    color: #ffffff;
+}
+
+// D(1) is the first child division inside the container
+.D\(1\)\:h:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}

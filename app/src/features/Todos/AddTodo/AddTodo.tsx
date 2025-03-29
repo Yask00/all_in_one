@@ -55,47 +55,53 @@ const AddTodo = (): ReactElement => {
   // console.log(watch("todo")); // watch input value by passing the name of it
 
   return (
-    <div className="add-todo">
-      <>
-        {mutation.isError ? (
-          <div>An error occurred: {mutation.error.message}</div>
-        ) : null}
+    <div className="add-todo-wrapper">
+      <div className="add-todo">
+        <>
+          {mutation.isError ? (
+            <div>An error occurred: {mutation.error.message}</div>
+          ) : null}
 
-        {/* {mutation.isSuccess ? <div>Todo added!</div> : null} */}
+          {/* {mutation.isSuccess ? <div>Todo added!</div> : null} */}
 
-        {mutation.isPending ? <Spinner /> : null}
+          {mutation.isPending ? <Spinner /> : null}
 
-        {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
-        <form className="form-inline" onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="todo">Todo:</label>
-          <input
-            /* register your input into the hook by invoking the "register" function */
-            {...register(
-              "todo",
-              submitOptions.todo /*{ required: true, min: 4 } */
-            )}
-            defaultValue={""}
-            // ref={todoRef} with ref is always empty in hook form
-            type="text"
-            id="todo"
-            placeholder="Enter todo"
-            name="todo"
-          />
-          {/* errors will return when field validation fails  */}
-          {errors.todo && <span>* This field is required</span>}
-
-          <label>
+          {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
+          <form className="form-inline" onSubmit={handleSubmit(onSubmit)}>
+            <label htmlFor="todo">Todo:</label>
             <input
-              {...register("completed")}
-              // ref={completedRef}
-              type="checkbox"
-              name="completed"
-            />{" "}
-            Completed?
-          </label>
-          <button type="submit">Create Todo</button>
-        </form>
-      </>
+              /* register your input into the hook by invoking the "register" function */
+              {...register(
+                "todo",
+                submitOptions.todo /*{ required: true, min: 4 } */
+              )}
+              defaultValue={""}
+              // ref={todoRef} with ref is always empty in hook form
+              type="text"
+              id="todo"
+              placeholder="Enter todo"
+              name="todo"
+            />
+            {/* errors will return when field validation fails  */}
+            {errors.todo && (
+              <span className="error">* This field is required</span>
+            )}
+
+            <label>
+              <input
+                {...register("completed")}
+                // ref={completedRef}
+                type="checkbox"
+                name="completed"
+              />{" "}
+              Completed?
+            </label>
+            <button type="submit" className="btn btn--submit">
+              Create Todo
+            </button>
+          </form>
+        </>
+      </div>
     </div>
   );
 };
