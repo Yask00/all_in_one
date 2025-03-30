@@ -35,7 +35,7 @@ TODO APP in all test cases
         - <del>theme
         - <del>language
     * other??
-4.  Websockets
+4.  <del>Websockets
 5.	With popular npm modules
     * <del>React-query
     * <del>Moment.js (date-fsn,day.js) -> Intl _ Clock comp

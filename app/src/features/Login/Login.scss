@@ -1,8 +1,8 @@
 //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
 
 /* Full-width input fields */
-input[type=text],
-input[type=password] {
+.modal [type=text],
+.modal input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -12,7 +12,7 @@ input[type=password] {
 }
 
 /* Set a style for all buttons */
-.modal-btn {
+.modal .modal-btn {
   background-color: #027249;
   color: white;
   padding: 14px 20px;
@@ -22,19 +22,19 @@ input[type=password] {
   width: 100%;
 }
 
-button:hover {
+.modal button:hover {
   opacity: 0.8;
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn {
+.modal .cancelbtn {
   width: auto;
   padding: 10px 18px;
   background-color: #cf1609;
 }
 
 /* Center the image and position the close button */
-.imgcontainer {
+.modal .imgcontainer {
   display: flex;
   justify-content: center;
   margin: 24px 0 12px 0;
@@ -45,11 +45,11 @@ button:hover {
   }
 }
 
-.container {
+.modal .container {
   padding: 16px;
 }
 
-span.psw {
+.modal span.psw {
   float: right;
   padding-top: 16px;
 }
@@ -76,7 +76,7 @@ span.psw {
 }
 
 /* Modal Content/Box */
-.modal-content {
+.modal .modal-content {
   max-width: 500px;
   background-color: #fefefe;
   margin: 5% auto 15% auto;
@@ -88,12 +88,12 @@ span.psw {
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-  span.psw {
+  .modal span.psw {
     display: block;
     float: none;
   }
 
-  .cancelbtn {
+  .modal .cancelbtn {
     width: 100%;
   }
 }
