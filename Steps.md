@@ -6,7 +6,7 @@
     <del>mobile first
     <del> reset - fights with tailwind
 3. <del>add accesibility
-4. websockets if?
+4. <del>websockets if?
 5. redux
 6. tests
 7. opt typescript

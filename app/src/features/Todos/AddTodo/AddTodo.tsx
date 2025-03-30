@@ -3,9 +3,9 @@ import "./AddTodo.scss";
 import { useMutation } from "@tanstack/react-query";
 import { createTodo } from "../../../api/api";
 import Spinner from "../../../components/Spinner/Spinner";
-import { toast } from "react-toastify";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Todo } from "../../../types/interfaces";
+import { socket } from "../../../api/socket";
 
 type Inputs = {
   todo: string;
@@ -23,7 +23,12 @@ const AddTodo = (): ReactElement => {
       // completedRef.current!.checked = false;
       resetField("todo");
       resetField("completed");
-      toast.success("Todo added");
+
+      socket.emit("add_todo", {
+        senderId: "123", // ID of the sender
+        receiverId: "456", // ID of the receiver
+        message: "Todo added",
+      });
     },
   });
 

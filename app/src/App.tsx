@@ -12,6 +12,8 @@ import Todos from "./features/Todos/Todos/Todos";
 import Todo from "./features/Todos/Todo/Todo";
 import AddTodo from "./features/Todos/AddTodo/AddTodo";
 import { ThemeProvider } from "./context/ThemeContext";
+import Home from "./components/Home/Home";
+import { Bounce, ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -23,14 +25,7 @@ function App() {
             <Aside></Aside>
             <Main>
               <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <div className="flex items-center justify-center w-full h-full">
-                      HOME PAGE
-                    </div>
-                  }
-                />
+                <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/todos">
                   <Route
@@ -61,7 +56,20 @@ function App() {
               </Routes>
             </Main>
             <Footer></Footer>
-          </Router>
+          </Router>{" "}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </Layout>{" "}
       </ThemeProvider>
     </AuthProvider>
