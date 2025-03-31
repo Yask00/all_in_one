@@ -27,16 +27,16 @@ TODO APP in all test cases
     * Jest
     * Cypress
     * React testing library 
-4. With state management
-    * redux toolkit + others
-        - todos
-    * context API
+4. <del>With state management
+    * <del>redux toolkit + others
+        - <del>todos
+    * <del>context API
         - <del>user and token
         - <del>theme
         - <del>language
-    * other??
+    * <del>other??
 4.  <del>Websockets
-5.	With popular npm modules
+5.	<del>With popular npm modules
     * <del>React-query
     * <del>Moment.js (date-fsn,day.js) -> Intl _ Clock comp
     * <del>Lodash skip

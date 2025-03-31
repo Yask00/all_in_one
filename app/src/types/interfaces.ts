@@ -18,3 +18,9 @@ export type User = {
   id: string;
   email: string;
 } | null;
+
+export interface Message {
+  message: string;
+  receiverId: string;
+  senderid: string;
+}

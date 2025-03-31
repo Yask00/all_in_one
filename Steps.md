@@ -7,7 +7,7 @@
     <del> reset - fights with tailwind
 3. <del>add accesibility
 4. <del>websockets if?
-5. redux
+5. <del>redux
 6. tests
 7. opt typescript
 8. changelog build deploy
