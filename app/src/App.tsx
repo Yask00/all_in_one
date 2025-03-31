@@ -8,7 +8,8 @@ import Login from "./features/Login/Login";
 import AuthProvider from "./context/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import Todos from "./features/Todos/Todos/Todos";
+// import Todos from "./features/Todos/Todos/Todos";
+import TodosRedux from "./features/Todos/TodosRedux/TodosRedux";
 import Todo from "./features/Todos/Todo/Todo";
 import AddTodo from "./features/Todos/AddTodo/AddTodo";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -32,7 +33,8 @@ function App() {
                     index
                     element={
                       <ProtectedRoute>
-                        <Todos />
+                        {/* <Todos /> */}
+                        <TodosRedux />
                       </ProtectedRoute>
                     }
                   />

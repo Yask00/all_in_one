@@ -1,21 +1,22 @@
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import { socket } from "../../api/socket";
+import {
+  addMessage,
+  selectMessages,
+} from "../../features/Messages/messagesApiSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { Message } from "../../types/interfaces";
 
 const Home = (): ReactElement => {
-  interface Message {
-    senderId: string;
-    receiverId: string;
-    message: string;
-  }
+  const dispatch = useAppDispatch();
+  const messages = useAppSelector(selectMessages);
 
   const messageRef = useRef<HTMLInputElement | null>(null);
-  const [receiveMessage, setReceiveMessage] = useState<Message | null>(null); // State to store received message
 
   useEffect(() => {
     // Listen for incoming messages from the server
     socket.on("receive_message", (data) => {
-      console.log(data); // Log the received message data to the console
-      setReceiveMessage(data); // Set the received message data to state
+      dispatch(addMessage(data));
     });
     // Cleanup the effect by removing the event listener when the component unmounts
     return () => {
@@ -24,7 +25,6 @@ const Home = (): ReactElement => {
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   const sendMessage = async () => {
-    console.log(messageRef.current);
     // Emit a socket event with the message details
     socket.emit("send_message", {
       senderId: "123", // ID of the sender
@@ -62,11 +62,15 @@ const Home = (): ReactElement => {
       </button>{" "}
       {/* Button to trigger sending a message */}
       <div className="flex flex-col mt-4 justify-center">
-        <p className="underline">Recieved back socket message:</p>
-        <p>View senderId: {receiveMessage?.senderId}</p>{" "}
-        <p>View receiverId: {receiveMessage?.receiverId}</p>{" "}
-        <p>View messages: {receiveMessage?.message}</p>{" "}
-        {/* Display the received message */}
+        <p className="underline">Websocket messages in state:</p>
+        {messages.length &&
+          messages.map((message: Message) => {
+            return (
+              <div key={Math.random()}>
+                <p>Message: {message?.message}</p>{" "}
+              </div>
+            );
+          })}
       </div>
     </div>
   );
