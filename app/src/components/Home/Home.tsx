@@ -63,7 +63,7 @@ const Home = (): ReactElement => {
       {/* Button to trigger sending a message */}
       <div className="flex flex-col mt-4 justify-center">
         <p className="underline">Websocket messages in state:</p>
-        {messages.length &&
+        {messages.length > 0 &&
           messages.map((message: Message) => {
             return (
               <div key={Math.random()}>

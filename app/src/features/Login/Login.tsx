@@ -149,7 +149,7 @@ const Login = (): ReactElement => {
             Cancel
           </button>
           <span className="psw">
-            Forgot <a href="">password?</a>
+            <a href="">Forgot password?</a>
           </span>
         </div>
       </form>
