@@ -76,7 +76,7 @@ const Login = (): ReactElement => {
         navigate("/todos");
       })
       .catch((err) => {
-        console.log(err);
+        return err;
       })
       .finally(() => {
         setLoading(false);
